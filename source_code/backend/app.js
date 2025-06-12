@@ -8,10 +8,11 @@ app.use(express.json());
 
 // Set up database connection
 const db = mysql.createPool({
-  host: 'localhost',
+  host: 'nozomi.proxy.rlwy.net',
+  port: 50023,
   user: 'root',
-  password: '',
-  database: 'project_db'
+  password: 'HmBOsrPgoAretVqTHOTLDHnsrYrSzJMR',
+  database: 'railway'
 });
 
 // ------------------------
