@@ -6,7 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Set up database connection
 const db = mysql.createPool({
   host: 'nozomi.proxy.rlwy.net',
   port: 50023,
@@ -19,9 +18,6 @@ const db = mysql.createPool({
 // Reset & Delete Test Data
 // ------------------------
 
-app.get('/', (req, res) => {
-  res.send('API is running.');
-});
 
 
 app.get('/reset-db', async (req, res) => {
@@ -242,6 +238,7 @@ app.delete('/delete-location/:id', async (req, res) => {
 // ------------------------
 // Start Server
 // ------------------------
+
 const PORT = process.env.PORT || 3001;
 const HOST = '0.0.0.0';
 
