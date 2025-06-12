@@ -18,6 +18,12 @@ const db = mysql.createPool({
 // ------------------------
 // Reset & Delete Test Data
 // ------------------------
+
+app.get('/', (req, res) => {
+  res.send('API is running.');
+});
+
+
 app.get('/reset-db', async (req, res) => {
   try {
     await db.query('CALL sp_reset_schema();');
